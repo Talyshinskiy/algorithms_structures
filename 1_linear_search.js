@@ -9,12 +9,12 @@ let count = 0;
 function linearSearch(array, item) {
   for (let i = 0; i < array.length; i++) {
     count += 1;
-    if (array[i] === item) {
+    if (item === array[i]) {
       return item;
     }
   }
   return null;
 }
 
-console.log(linearSearch(array, 8));
-// console.log("count:", count);
+console.log(linearSearch(array, 22));
+console.log("count:", count);

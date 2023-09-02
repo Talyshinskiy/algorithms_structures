@@ -13,7 +13,7 @@ function selectionSort(array) {
       if (array[j] < array[indexMin]) {
         indexMin = j;
       }
-      count += 1;
+      count++;
     }
     let tmp = array[i];
     array[i] = array[indexMin];

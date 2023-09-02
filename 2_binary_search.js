@@ -1,7 +1,7 @@
 //Binary search.js
 // O(n log n)
 
-const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 let count = 0;
 
 function binarySearsch(array, item) {
@@ -27,14 +27,18 @@ function binarySearsch(array, item) {
   return position;
 }
 
-// console.log("binary_searsch 1", binary_searsch(array, 9));
-// // console.log("count:", count);
-
-// console.log("binary_searsch 2", binary_searsch(array, 3));
-// // console.log("count:", count);
-
-// console.log("binary_searsch 3", binary_searsch(array, 1));
+// console.log("binarySearsch: ", binarySearsch(arr, 9));
 // console.log("count:", count);
 
-console.log("binary_searsch 4", binarySearsch(array, 1));
-console.log("count:", count);
+function recursiveBinarySearch(array, item, start, end) {
+  count += 1;
+  let middle = Math.floor((start + end) / 2);
+  if (item === array[middle]) return middle;
+  if (item < array[middle]) {
+    return recursiveBinarySearch(array, item, start, middle - 1);
+  } else {
+    return recursiveBinarySearch(array, item, middle + 1, end);
+  }
+}
+console.log(recursiveBinarySearch(arr, 2, 0, arr.length));
+console.log("count", count);
